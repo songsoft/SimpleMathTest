@@ -53,6 +53,20 @@ namespace SimpleMath.Tests
             Assert.AreSame(objOriginal, actual, "{0} {1}", objOriginal.GetHashCode(), actual.GetHashCode());
         }
 
+        [TestMethod]
+        public void Test_IsInstanceOf()
+        {
+            List<object> listObject = new List<object>();
+            object objOriginal = new object();
+            listObject.Add(objOriginal);
+
+            object actual = listObject[0];
+
+
+            Assert.IsInstanceOfType(objOriginal, typeof(object), "{0} {1}", objOriginal.GetHashCode(), actual.GetHashCode());
+        }
+
+
         [TestCleanup]
         public void TestCleanup()
         {
